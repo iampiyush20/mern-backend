@@ -5,9 +5,10 @@ require('./Db/Config');
 const Products=require('./Db/Products');
 const app=express();
 app.use(express.json())
-app.use(cors());
+
 const PORT=process.env.PORT || 5000;
 const User=require('./Db/User');
+app.use(cors());
 app.post('/api/register',async(req,res)=>{
 
    const fuser=await User.findOne({email:req.body.email});
