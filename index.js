@@ -10,7 +10,7 @@ const PORT=process.env.PORT || 5000;
 const User=require('./Db/User');
 app.use(cors({'Access-Control-Allow-Origin': '*'}));
 app.post('/api/register',async(req,res)=>{
-
+console.log(req.body);
    const fuser=await User.findOne({email:req.body.email});
    const nuser=new User(req.body);
    console.log(fuser);
